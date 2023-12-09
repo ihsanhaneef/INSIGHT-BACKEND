@@ -4,6 +4,12 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 import technovaRegistrationRouter from "./routes/registration.js";
+import replicaRegistrationRouter from "./routes/replicaregistration.js";
+import langameRegistrationRouter from "./routes/langameregistration.js";
+import debuggingRouter from "./routes/debugging.js";
+import scoreRouter from "./routes/score.js";
+
+
 
 const app = express();
 
@@ -20,13 +26,22 @@ app.use(cors({
 // app.use(cors(corsOptions));
 
 app.use('/api/technova', technovaRegistrationRouter);
+app.use('/api/replica', replicaRegistrationRouter);
+app.use('/api/langame', langameRegistrationRouter);
+app.use('/api/langame', debuggingRouter);
+app.use('/api/score', scoreRouter);
+
+
 
 const CONNECTION_URL =
-    "mongodb+srv://ihsanhaneef:Jyryi7x3IXyvDuFC@cluster0.0ehote5.mongodb.net/?retryWrites=true&w=majority";
-const PORT = process.env.PORT || 7000;
+    "mongodb+srv://ihsanhaneef:Jyryi7x3IXyvDuFC@cluster0.0ehote5.mongodb.net/insight?retryWrites=true&w=majority";
+
+
+    const PORT = process.env.PORT || 7000;
 
 const connectDB = async () => {
     try {
+        console.log("CONNNECTING TO DATABASE..............")
         const conn = await mongoose.connect(CONNECTION_URL);
         console.log(`Mongo db connected: ${conn.connection.host}`);
     } catch (error) {
@@ -34,6 +49,7 @@ const connectDB = async () => {
         process.exit(1);
     }
 };
+
 
 try {
     connectDB();
