@@ -32,6 +32,6 @@ const langameRegistrationSchema = mongoose.Schema({
     }
 });
 
-const LangameRegistration = mongoose.model('langameregistration', langameRegistrationSchema);
+const LangameRegistration = mongoose.model('langame', langameRegistrationSchema);
 
 export default LangameRegistration;

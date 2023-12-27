@@ -13,7 +13,7 @@ export const debugging = async (req, res) => {
         const savedData = await Debugging.create(req.body);
         
         if (!savedData) return res.status(400).json({ message: "Registration is failed due to server error." })
-    
+        
         res.status(200).json({ message: "You are successfully registered." });
         
     } catch (error) {

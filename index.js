@@ -1,3 +1,4 @@
+// indexedDB.js/app.js
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
@@ -8,6 +9,18 @@ import replicaRegistrationRouter from "./routes/replicaregistration.js";
 import langameRegistrationRouter from "./routes/langameregistration.js";
 import debuggingRouter from "./routes/debugging.js";
 import scoreRouter from "./routes/score.js";
+import treasurehuntRouter from "./routes/treasurehunt.js";
+import webdesigningRouter from "./routes/webdesigning.js";
+import pubgRouter from "./routes/pubg.js";
+import seminarRouter from "./routes/seminar.js";
+import culturalRouter from "./routes/cultural.js";
+import quizRouter from "./routes/quiz.js";
+import debateRouter from "./routes/debate.js";
+import papaerpresentationRouter from "./routes/paperpresentation.js";
+import liveEventRouter from "./routes/liveevent.js";
+import winnerrouter from "./routes/winners.js";
+import Annrouter from "./routes/ann.js";
+
 
 
 
@@ -28,13 +41,25 @@ app.use(cors({
 app.use('/api/technova', technovaRegistrationRouter);
 app.use('/api/replica', replicaRegistrationRouter);
 app.use('/api/langame', langameRegistrationRouter);
-app.use('/api/langame', debuggingRouter);
+app.use('/api/debugging', debuggingRouter);
 app.use('/api/score', scoreRouter);
+app.use('/api/treasurehunt', treasurehuntRouter);
+app.use('/api/webdesigning', webdesigningRouter);
+app.use('/api/pubg', pubgRouter);
+app.use('/api/cultural', culturalRouter);
+app.use('/api/quiz', quizRouter);
+app.use('/api/debate', debateRouter);
+app.use('/api/paperpresentation', papaerpresentationRouter);
+app.use('/api/seminar', seminarRouter);
+app.use('/api/admin', technovaRegistrationRouter);
+app.use("/api/liveevent", liveEventRouter);
+app.use("/api/winners",winnerrouter)
+app.use("/api/anno", Annrouter)
 
 
 
 const CONNECTION_URL =
-    "mongodb+srv://ihsanhaneef:Jyryi7x3IXyvDuFC@cluster0.0ehote5.mongodb.net/insight?retryWrites=true&w=majority";
+    "mongodb+srv://ihsanhaneef:Jyryi7x3IXyvDuFC@cluster0.0ehote5.mongodb.net/insight24?retryWrites=true&w=majority";
 
 
     const PORT = process.env.PORT || 7000;

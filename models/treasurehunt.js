@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const replicaRegistrationSchema = mongoose.Schema({
+const TreasurehuntSchema = mongoose.Schema({
     collegename: {
         type: String,
         required: true,
@@ -32,6 +32,6 @@ const replicaRegistrationSchema = mongoose.Schema({
     }
 });
 
-const ReplicaRegistration = mongoose.model('replicar 1.0', replicaRegistrationSchema);
+const TreasureHunt = mongoose.model('treasurehunt', TreasurehuntSchema);
 
-export default ReplicaRegistration;
+export default TreasureHunt;

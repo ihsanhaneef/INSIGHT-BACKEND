@@ -32,6 +32,6 @@ const technovaRegistrationSchema = mongoose.Schema({
     }
 });
 
-const TechnovaRegistration = mongoose.model('technovaregistration', technovaRegistrationSchema);
+const TechnovaRegistration = mongoose.model('technova 5.0', technovaRegistrationSchema);
 
 export default TechnovaRegistration;

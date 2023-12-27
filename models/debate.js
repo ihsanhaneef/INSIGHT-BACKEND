@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const replicaRegistrationSchema = mongoose.Schema({
+const DebateSchema = mongoose.Schema({
     collegename: {
         type: String,
         required: true,
@@ -32,6 +32,6 @@ const replicaRegistrationSchema = mongoose.Schema({
     }
 });
 
-const ReplicaRegistration = mongoose.model('replicar 1.0', replicaRegistrationSchema);
+const Debate = mongoose.model('debate', DebateSchema);
 
-export default ReplicaRegistration;
+export default Debate;
