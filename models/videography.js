@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const PaperpresentationSchema = mongoose.Schema({
+const VideographySchema = mongoose.Schema({
     collegename: {
         type: String,
         required: true,
@@ -32,6 +32,6 @@ const PaperpresentationSchema = mongoose.Schema({
     }
 });
 
-const Paperpresentation = mongoose.model('paperpresentation', PaperpresentationSchema);
+const Videography = mongoose.model('videography', VideographySchema);
 
-export default Paperpresentation;
+export default Videography;

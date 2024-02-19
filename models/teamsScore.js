@@ -1,3 +1,4 @@
+// scoreboard model.js
 import mongoose from "mongoose";
 
 const teamScoreSchema = mongoose.Schema({

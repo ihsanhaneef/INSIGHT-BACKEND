@@ -1,16 +1,16 @@
-import Paperpresentation from "../models/paperpresentation.js";
+import Photography from "../models/photography.js";
 
-export const paperpresentation = async (req, res) => {
+export const photography = async (req, res) => {
     try {
         const { email, collegename, participants } = req.body;
         console.log(req.body)
         if (!email || !collegename || !participants) return res.status(400).json({ message: "Missing of essential data from request body." });
 
-        const existingRegistration = await Paperpresentation.findOne({ email: req.body.email });
+        const existingRegistration = await Photography.findOne({ email: req.body.email });
 
         if (existingRegistration) return res.status(400).json({ message: "Email is already registred." });
 
-        const savedData = await Paperpresentation.create(req.body);
+        const savedData = await Photography.create(req.body);
         
         if (!savedData) return res.status(400).json({ message: "Registration is failed due to server error." })
     

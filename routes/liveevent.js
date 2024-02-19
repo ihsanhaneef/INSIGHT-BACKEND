@@ -1,9 +1,12 @@
-// routes/liveevent.js
+// liveevent.js
 import express from "express";
-import { getlive } from "../controllers/liveevent.js";
+import { auth } from "../auth/auth.js";
+import { getlive, updateColorById } from "../controllers/liveevent.js";
+
 
 const router = express.Router();
-router.get("/", getlive);
 
-const liveEventRouter = router;
-export default liveEventRouter;
+router.get("/", getlive);
+router.post("/:id",auth,updateColorById); // Define the PUT endpoint for updating event color
+
+export default router;

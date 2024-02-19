@@ -1,23 +1,19 @@
+//router admin
 import express from "express";
 
-import { technovadata } from "../controllers/admin.js";
-
-// import {
-//     debugging,
-// } from "../controllers/debugging.js";
+import { adminLogin, technovadata, togglePayment } from "../controllers/admin.js";
+import { auth } from "../auth/auth.js";
 
 const router = express.Router();
 
-router.get('/technova', technovadata);
+router.get('/register',auth, technovadata);
+
+
+router.post('/login', adminLogin);
+
+router.post("/togglepayment",auth,togglePayment)
+
+export const adminRouter=router;
 
 export default router;
 
-                        // replica
-//  import express from "express";
-
-// import { replicadata } from "../controllers/admin.js";
-//  const router = express.Router();
-                        
-// router.get('/technova', technovadata);
-                        
-// export default router;

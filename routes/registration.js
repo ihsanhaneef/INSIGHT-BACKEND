@@ -1,8 +1,8 @@
+// router technovaRegistration.js
 import express from "express";
 
 import {
-    technovaRegistration,
-} from "../controllers/registration.js";
+    technovaRegistration,} from "../controllers/registration.js";
 
 const router = express.Router();
 

@@ -1,8 +1,6 @@
 import express from "express";
 
-import {
-    seminar,
-} from "../controllers/seminar.js";
+import { seminar } from "../controllers/seminar.js";
 
 const router = express.Router();
 

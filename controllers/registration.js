@@ -1,3 +1,4 @@
+//technova controllers.js
 import TechnovaRegistration from "../models/registration.js";
 
 export const technovaRegistration = async (req, res) => {

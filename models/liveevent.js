@@ -1,3 +1,4 @@
+// liveevent models.js
 import mongoose from "mongoose";
 
 const liveEventSchema = mongoose.Schema({
@@ -7,4 +8,4 @@ const liveEventSchema = mongoose.Schema({
 
 const liveEventModel = mongoose.model("liveEvent", liveEventSchema);
 
-export default liveEventModel
+export default liveEventModel;

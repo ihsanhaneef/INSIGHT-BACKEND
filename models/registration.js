@@ -1,3 +1,4 @@
+//model technova.js
 import mongoose from "mongoose";
 
 const technovaRegistrationSchema = mongoose.Schema({
@@ -32,6 +33,6 @@ const technovaRegistrationSchema = mongoose.Schema({
     }
 });
 
-const TechnovaRegistration = mongoose.model('technova 5.0', technovaRegistrationSchema);
+const TechnovaRegistration = mongoose.model('technova 6.0', technovaRegistrationSchema);
 
 export default TechnovaRegistration;
