@@ -2,10 +2,10 @@
 const cron = require('cron');
 const https = require('https');
 
-const backendurl = 'https://insight-backend.onrender.com' ;
+const backendUrl = 'https://insight-backend.onrender.com' ;
 const job = new cron.CronJob('*/14 * * * *', function () {
     // This function will be executed every 14 minutes.
-    console.log(`Restrating server`);
+    console.log(`Restarting server`);
 
     // Perform an HTTPS GET request to hit any backend api.
     https.get(backendUrl, (res) => {
@@ -24,6 +24,4 @@ const job = new cron.CronJob('*/14 * * * *', function () {
 
 // Export the cron job.
 
-module.exports = {
-    job, 
-};
+export default job;
