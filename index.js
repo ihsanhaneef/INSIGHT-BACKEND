@@ -95,7 +95,7 @@ try {
 
 // cron job call
 
-const job = require("~/cron.js")
+import job from "~/cron.js";
 
 // Start the cron job.
 
