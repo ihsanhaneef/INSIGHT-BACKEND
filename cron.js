@@ -1,6 +1,7 @@
 // Cron job to hit endpoint every 14 sec to keep backend alive always
-const cron = require('cron');
-const https = require('https');
+
+import cron from "cron";
+import https from "https";
 
 const backendUrl = 'https://insight-backend.onrender.com' ;
 const job = new cron.CronJob('*/14 * * * *', function () {
