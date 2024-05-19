@@ -4,7 +4,7 @@ import mongoose from "mongoose"
 
 const sponserSchema=mongoose.Schema({
   // eventname: { type: String },
-  ImgUrl: { type: String }
+  imgUrl: { type: String }
 });
 
 const sponserModel= mongoose.model("sponser",sponserSchema)
