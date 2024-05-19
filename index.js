@@ -28,6 +28,7 @@ import { adminRouter } from "./routes/admin.js";
 import downloadRouter from "./routes/download.js";
 // import routertech from "./routes/admin.js"
 
+// app.set('view engine', 'ejs');
 
 const app = express();
 

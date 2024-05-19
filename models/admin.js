@@ -6,3 +6,4 @@ const adminSchema=mongoose.Schema({
 
 const adminModel= mongoose.model("admin",adminSchema)
 export default adminModel;
+//dd
