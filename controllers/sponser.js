@@ -17,7 +17,7 @@ export const getSponser = async (req, res) =>{
 export const addSponser = async (req, res) => {
   const { imgUrl } = req.body;
   try {
-    const newSponser = new Sponser({ ImgUrl: imgUrl });
+    const newSponser = new Sponser({ imgUrl: imgUrl });
     await newSponser.save();
     res.redirect('/sponser'); // Redirect to the page to show updated image list
   } catch (error) {
