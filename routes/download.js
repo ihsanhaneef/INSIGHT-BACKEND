@@ -14,6 +14,7 @@ import Debugging from "../models/debugging.js";
 import TreasureHunt from "../models/treasurehunt.js";
 import Photography from "../models/photography.js"
 import Videography from "../models/videography.js"
+import WebDesigning from "../models/webdesigning.js";
 
 
 const downloadRouter = express.Router();
@@ -93,6 +94,55 @@ downloadRouter.get("/replica", auth, async (req, res) => {
   }
 });
 
+
+// ---------------------------------------------
+//web
+downloadRouter.get("/webdesign", auth, async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "text/csv");
+    res.setHeader("Content-Disposition", 'attachment; filename="data.csv"');
+    /// start           v change
+    const fetch = await WebDesigning.find().sort({
+      paymentStatus: -1,
+    });
+    const csvStream = format({ headers: true });
+    csvStream.pipe(res);
+
+    fetch.forEach(({ _doc }, docid) => {
+      _doc?.participants?.map((p) => {
+        csvStream.write({
+          //      v change
+          event: "webdesign",
+          teamId: `Team ${docid + 1}`,
+          collegename: _doc?.collegename,
+          name: p?.username,
+          phone: `${p?.phone}`,
+          payment: _doc?.paymentStatus,
+        });
+      });
+    });
+
+    csvStream.end(); 
+    // End the CSV stream
+
+// replica-----------------
+
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("ERROR DOWNLOADING");
+  }
+});
+
+
+
+
+
+
+
+
+
+// -------------------------------------------------
 //langame=======
 downloadRouter.get("/langame", auth, async (req, res) => {
   try {
@@ -538,6 +588,10 @@ const photography = await Photography.find().sort({
 const videography = await Videography.find().sort({
   paymentStatus: -1,
 });
+//webdesign=============
+const webdesign = await WebDesigning.find().sort({
+  paymentStatus: -1,
+});
 
 
 
@@ -699,6 +753,21 @@ const videography = await Videography.find().sort({
     _doc?.participants?.map((p) => {
       csvStream.write({
         event: "videography",
+        teamId: `Team ${docid + 1}`,
+        email:p?.email,
+        collegename: _doc?.collegename,
+        name: p?.username,
+        phone: `${p?.phone}`,
+        payment: _doc?.paymentStatus,
+      });
+    });
+  });
+
+  // webdesign=========================================
+  webdesign.forEach(({ _doc }, docid) => {
+    _doc?.participants?.map((p) => {
+      csvStream.write({
+        event: "webdesign",
         teamId: `Team ${docid + 1}`,
         email:p?.email,
         collegename: _doc?.collegename,

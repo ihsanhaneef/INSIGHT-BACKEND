@@ -13,6 +13,7 @@ import Debugging from "../models/debugging.js";
 import TreasureHunt from  '../models/treasurehunt.js'
 import Photography from "../models/photography.js";
 import Videography from "../models/videography.js";
+import WebDesigning from "../models/webdesigning.js"
 
 
 
@@ -35,8 +36,9 @@ export const technovadata = async (req, res) => {
     const TreasureHuntData= await TreasureHunt.find();
     const PhotographyData= await Photography.find();
     const VideographyData= await Videography.find();
+    const WebDesignData= await WebDesigning.find();
 
-    return res.status(200).json({ techData, replicaData, langameData, culturalData, debateData, seminarData,pptData, quizData, debugData, TreasureHuntData, PhotographyData, VideographyData});
+    return res.status(200).json({ techData, replicaData, langameData, culturalData, debateData, seminarData,pptData, quizData, debugData, TreasureHuntData, PhotographyData, VideographyData, WebDesignData });
     
   } catch (error) {
     console.log(error);
@@ -145,6 +147,11 @@ export async function togglePayment(req, res) {
 
         case "videography":
         await Videography.findByIdAndUpdate(id, {
+          paymentStatus: status,
+        });
+        break;
+        case "webdesign":
+        await WebDesigning.findByIdAndUpdate(id, {
           paymentStatus: status,
         });
         break;
