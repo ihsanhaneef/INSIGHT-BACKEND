@@ -9,3 +9,4 @@ const sponserSchema=mongoose.Schema({
 
 const sponserModel= mongoose.model("sponser",sponserSchema)
 export default sponserModel
+//dddd
