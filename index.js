@@ -3,6 +3,8 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
+import job from "./cron.js";
+
 
 import technovaRegistrationRouter from "./routes/registration.js";
 import replicaRegistrationRouter from "./routes/replicaregistration.js";
@@ -96,8 +98,7 @@ try {
 
 // cron job call
 
-// import job from "./cron.js";
 
 // Start the cron job.
 
-// job.start();
+job.start();
