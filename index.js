@@ -74,7 +74,7 @@ app.use("/api/download",downloadRouter)
 const PORT = process.env.PORT || 7001;
 
 const CONNECTION_URL =
-    "mongodb+srv://ihsanhaneef:Jyryi7x3IXyvDuFC@cluster0.0ehote5.mongodb.net/insight24?retryWrites=true&w=majority";
+    " ";
 
 
 const connectDB = async () => {
